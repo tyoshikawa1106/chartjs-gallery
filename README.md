@@ -6,6 +6,7 @@
 
 ## Requirements
 - Node v6.0.0 ~
+- Chart.js v2.2.1
 
 ## Usage
 Run Apps
