@@ -1,0 +1,14 @@
+{
+  "name": "salesforce-lightning-design-system",
+  "homepage": "https://github.com/salesforce-ux/design-system-bower",
+  "version": "2.0.3",
+  "_release": "2.0.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.0.3",
+    "commit": "7e5a3842a9f88a843b3b741bf696851e955d768c"
+  },
+  "_source": "https://github.com/salesforce-ux/design-system-bower.git",
+  "_target": "^2.0.3",
+  "_originalSource": "salesforce-lightning-design-system"
+}

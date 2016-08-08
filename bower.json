@@ -1,0 +1,19 @@
+{
+  "name": "app",
+  "description": "",
+  "main": "server.js",
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-css": "^4.2.0",
+    "jquery": "^3.1.0",
+    "salesforce-lightning-design-system": "^2.0.3"
+  }
+}

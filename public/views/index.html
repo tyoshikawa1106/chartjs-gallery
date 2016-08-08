@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>App</title>
+    <!-- meta -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../images/favicon.ico" />
+    <!-- normalize css -->
+    <link rel="stylesheet" href="../vendor/normalize-css/normalize.css" />
+    <!-- Lightning Design System -->
+    <link rel="stylesheet" href="../vendor/salesforce-lightning-design-system/assets/styles/salesforce-lightning-design-system.min.css" />
+    <!-- jQuery -->
+    <script type="text/javascript" src="../vendor/jquery/dist/jquery.min.js"></script>
+    <!-- Chart.js -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.min.js"></script>
+  </head>
+  <body>
+    <div class="slds">
+      <!-- Header -->
+      <div class="slds-page-header" role="banner">
+        <div class="slds-grid">
+          <div class="slds-col slds-has-flexi-truncate">
+            <div class="slds-media slds-media--center">
+              <div class="slds-media__figure">
+                <svg aria-hidden="true" class="slds-icon slds-icon-standard-apps">
+                  <use xlink:href="../vendor/salesforce-lightning-design-system/assets/icons/standard-sprite/svg/symbols.svg#apps"></use>
+                </svg>
+              </div>
+              <div class="slds-media__body">
+                <p class="slds-page-header__title slds-truncate slds-align-middle" title="Chart Gallery">ChartJs Gallery</p>
+              </div>
+            </div>
+          </div>
+          <div class="slds-col slds-no-flex slds-grid slds-align-bottom">
+            <button class="slds-button slds-button--neutral slds-not-selected" aria-live="assertive" onClick="javascript:alert('Refresh!');">
+              <span class="slds-text-not-selected">
+                <svg aria-hidden="true" class="slds-button__icon--stateful">
+                  <use xlink:href="../vendor/salesforce-lightning-design-system/assets/icons/utility-sprite/svg/symbols.svg#refresh"></use>
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Content -->
+      <div class="slds-grid slds-wrap">
+        <!-- Bar Chart -->
+        <div class="slds-col slds-size--1-of-1 slds-small-size--1-of-2 slds-medium-size--1-of-3 slds-large-size--1-of-4 slds-box slds-m-around--x-small">
+          <canvas id="myBarChart" width="400" height="250"></canvas>
+        </div>
+        <!-- HorizontalBar Chart -->
+        <div class="slds-col slds-size--1-of-1 slds-small-size--1-of-2 slds-medium-size--1-of-3 slds-large-size--1-of-4 slds-box slds-m-around--x-small">
+          <canvas id="myHorizontalBarChart" width="400" height="250"></canvas>
+        </div>
+        <!-- Line Chart -->
+        <div class="slds-col slds-size--1-of-1 slds-small-size--1-of-2 slds-medium-size--1-of-3 slds-large-size--1-of-4 slds-box slds-m-around--x-small">
+          <canvas id="myLineChart" width="400" height="250"></canvas>
+        </div>
+        <!-- Reader Chart -->
+        <div class="slds-col slds-size--1-of-1 slds-small-size--1-of-2 slds-medium-size--1-of-3 slds-large-size--1-of-4 slds-box slds-m-around--x-small">
+          <canvas id="myRadarChart" width="400" height="250"></canvas>
+        </div>
+        <!-- Polar Area Chart -->
+        <div class="slds-col slds-size--1-of-1 slds-small-size--1-of-2 slds-medium-size--1-of-3 slds-large-size--1-of-4 slds-box slds-m-around--x-small">
+          <canvas id="myPolarAreaChart" width="400" height="250"></canvas>
+        </div>
+        <!-- Pie Chart -->
+        <div class="slds-col slds-size--1-of-1 slds-small-size--1-of-2 slds-medium-size--1-of-3 slds-large-size--1-of-4 slds-box slds-m-around--x-small">
+          <canvas id="myPieChart" width="400" height="250"></canvas>
+        </div>
+        <!-- Doughnut Chart -->
+        <div class="slds-col slds-size--1-of-1 slds-small-size--1-of-2 slds-medium-size--1-of-3 slds-large-size--1-of-4 slds-box slds-m-around--x-small">
+          <canvas id="myDoughnutChart" width="400" height="250"></canvas>
+        </div>
+        <!-- Bubble Chart -->
+        <div class="slds-col slds-size--1-of-1 slds-small-size--1-of-2 slds-medium-size--1-of-3 slds-large-size--1-of-4 slds-box slds-m-around--x-small">
+          <canvas id="myBubbleChart" width="400" height="250"></canvas>
+        </div>
+      </div>
+    </div>
+    <!-- app javascript -->
+    <script type="text/javascript" src="../javascripts/index.js"></script>
+  </body>
+</html>
