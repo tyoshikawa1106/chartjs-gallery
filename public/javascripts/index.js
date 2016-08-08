@@ -1,23 +1,65 @@
-(function(){
+var indexjs = (function(){
   "use strict";
   console.log('-- Happy Coding!! --');
 
-  function init() {
-    setBarChart();
-    setHorizontalBarChart();
-    setLineChart();
-    setRadarChart();
-    setPolarAreaChart();
-    setPieChart();
-    setDoughnutChart();
-    setBubbleChart();
+  var chartInfo = {
+    barChart : null,
+    horizontalBarChart : null,
+    lineChart : null,
+    radarChart : null,
+    polarAreaChart : null,
+    pieChart : null,
+    doughnutChart : null,
+    bubbleChart : null
   }
 
-  function getDemoLabels() {
+  function indexjs() {
+    indexjs.init();
+  }
+
+  indexjs.init = function() {
+    chartInfo.barChart = indexjs.setBarChart();
+    chartInfo.horizontalBarChart = indexjs.setHorizontalBarChart();
+    chartInfo.lineChart = indexjs.setLineChart();
+    chartInfo.radarChart = indexjs.setRadarChart();
+    chartInfo.polarAreaChart = indexjs.setPolarAreaChart();
+    chartInfo.pieChart = indexjs.setPieChart();
+    chartInfo.doughnutChart = indexjs.setDoughnutChart();
+    chartInfo.bubbleChart = indexjs.setBubbleChart();
+  }
+
+  indexjs.updateChartData = function() {
+    // BarChart
+    chartInfo.barChart.data.datasets[0].data = indexjs.getDemoData(12);
+    chartInfo.barChart.update();
+    // horizontalBarChart
+    chartInfo.horizontalBarChart.data.datasets[0].data = indexjs.getDemoData(12);
+    chartInfo.horizontalBarChart.update();
+    // lineChart
+    chartInfo.lineChart.data.datasets[0].data = indexjs.getDemoData(12);
+    chartInfo.lineChart.update();
+    // radarChart
+    chartInfo.radarChart.data.datasets[0].data = indexjs.getDemoData(12);
+    chartInfo.radarChart.update();
+    // polarAreaChart
+    chartInfo.polarAreaChart.data.datasets[0].data = indexjs.getDemoData(12);
+    chartInfo.polarAreaChart.update();
+    // pieChart
+    chartInfo.pieChart.data.datasets[0].data = indexjs.getDemoData(3);
+    chartInfo.pieChart.update();
+    // doughnutChart
+    chartInfo.doughnutChart.data.datasets[0].data = indexjs.getDemoData(3);
+    chartInfo.doughnutChart.update();
+    // bubbleChart
+    chartInfo.bubbleChart.data.datasets[0].data = indexjs.getDemoBobbleData(20);
+    chartInfo.bubbleChart.update();
+  }
+
+  indexjs.getDemoLabels = function() {
     return ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   }
 
-  function getDemoData(dataCnt) {
+  indexjs.getDemoData = function(dataCnt) {
     var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
 
     var data = [];
@@ -27,7 +69,7 @@
     return data;
   }
 
-  function getDemoBobbleData(dataCnt) {
+  indexjs.getDemoBobbleData = function(dataCnt) {
     var randomScalingFactor = function(){ return Math.round(Math.random()*10)};
 
     var data = [{}];
@@ -41,7 +83,7 @@
     return data;
   }
 
-  function getDemoColors() {
+  indexjs.getDemoColors = function() {
     var colors = [];
     for (var i = 0; i < 12; i++) {
       // colors.push('rgba(54, 162, 235, 1)');
@@ -50,17 +92,17 @@
     return colors;
   }
 
-  function setBarChart() {
+  indexjs.setBarChart = function() {
     var ctx = document.getElementById("myBarChart");
     var myChart = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: getDemoLabels(),
+        labels: indexjs.getDemoLabels(),
         datasets: [{
           label: 'Sample',
-          data: getDemoData(12),
-          backgroundColor: getDemoColors(),
-          borderColor: getDemoColors(),
+          data: indexjs.getDemoData(12),
+          backgroundColor: indexjs.getDemoColors(),
+          borderColor: indexjs.getDemoColors(),
           borderWidth: 1
         }]
       },
@@ -79,19 +121,21 @@
         }
       }
     });
+
+    return myChart;
   }
 
-  function setHorizontalBarChart() {
+  indexjs.setHorizontalBarChart = function() {
     var ctx = document.getElementById("myHorizontalBarChart");
     var myChart = new Chart(ctx, {
       type: 'horizontalBar',
       data: {
-        labels: getDemoLabels(),
+        labels: indexjs.getDemoLabels(),
         datasets: [{
           label: 'Sample',
-          data: getDemoData(12),
-          backgroundColor: getDemoColors(),
-          borderColor: getDemoColors(),
+          data: indexjs.getDemoData(12),
+          backgroundColor: indexjs.getDemoColors(),
+          borderColor: indexjs.getDemoColors(),
           borderWidth: 1
         }]
       },
@@ -110,17 +154,19 @@
         }
       }
     });
+
+    return myChart;
   }
 
-  function setLineChart() {
+  indexjs.setLineChart = function() {
     var ctx = document.getElementById("myLineChart");
     var myChart = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: getDemoLabels(),
+        labels: indexjs.getDemoLabels(),
         datasets: [{
           label: 'Sample',
-          data: getDemoData(12),
+          data: indexjs.getDemoData(12),
           fill: false,
           lineTension: 0.1,
           backgroundColor: "rgba(75,192,192,0.4)",
@@ -154,17 +200,19 @@
         }
       }
     });
+
+    return myChart;
   }
 
-  function setRadarChart() {
+  indexjs.setRadarChart = function() {
     var ctx = document.getElementById("myRadarChart");
     var myChart = new Chart(ctx, {
       type: 'radar',
       data: {
-        labels: getDemoLabels(),
+        labels: indexjs.getDemoLabels(),
         datasets: [{
           label: 'Sample1',
-          data: getDemoData(12),
+          data: indexjs.getDemoData(12),
           backgroundColor: "rgba(75,192,192,0.2)",
           borderColor: "rgba(75,192,192,1)",
           pointBackgroundColor: "rgba(75,192,192,1)",
@@ -173,7 +221,7 @@
           pointHoverBorderColor: "rgba(75,192,192,1)",
         },{
           label: 'Sample2',
-          data: getDemoData(12),
+          data: indexjs.getDemoData(12),
           backgroundColor: "rgba(179,181,198,0.2)",
           borderColor: "rgba(179,181,198,1)",
           pointBackgroundColor: "rgba(179,181,198,1)",
@@ -196,9 +244,11 @@
         }
       }
     });
+
+    return myChart;
   }
 
-  function setPolarAreaChart() {
+  indexjs.setPolarAreaChart = function() {
     var ctx = document.getElementById("myPolarAreaChart");
     var myChart = new Chart(ctx, {
       type: 'polarArea',
@@ -212,7 +262,7 @@
         ],
         datasets: [{
           label: 'Sample1',
-          data: getDemoData(5),
+          data: indexjs.getDemoData(5),
           backgroundColor: [
             "#FF6384",
             "#4BC0C0",
@@ -236,9 +286,11 @@
         }
       }
     });
+
+    return myChart;
   }
 
-  function setPieChart() {
+  indexjs.setPieChart = function() {
     var ctx = document.getElementById("myPieChart");
     var myChart = new Chart(ctx, {
       type: 'pie',
@@ -250,7 +302,7 @@
         ],
         datasets: [{
           label: 'Sample1',
-          data: getDemoData(3),
+          data: indexjs.getDemoData(3),
           backgroundColor: [
             "#FF6384",
             "#36A2EB",
@@ -274,9 +326,11 @@
         }
       }
     });
+
+    return myChart;
   }
 
-  function setDoughnutChart() {
+  indexjs.setDoughnutChart = function() {
     var ctx = document.getElementById("myDoughnutChart");
     var myChart = new Chart(ctx, {
       type: 'doughnut',
@@ -288,7 +342,7 @@
         ],
         datasets: [{
           label: 'Sample1',
-          data: getDemoData(3),
+          data: indexjs.getDemoData(3),
           backgroundColor: [
             "#FF6384",
             "#36A2EB",
@@ -312,16 +366,18 @@
         }
       }
     });
+
+    return myChart;
   }
 
-  function setBubbleChart() {
+  indexjs.setBubbleChart = function() {
     var ctx = document.getElementById("myBubbleChart");
     var myChart = new Chart(ctx, {
       type: 'bubble',
       data: {
         datasets: [{
           label: 'Sample1',
-          data: getDemoBobbleData(20),
+          data: indexjs.getDemoBobbleData(20),
           backgroundColor:"#FF6384",
           hoverBackgroundColor: "#FF6384",
         }]
@@ -334,8 +390,12 @@
         }
       }
     });
+
+    return myChart;
   }
 
   // 初期処理
-  init();
+  indexjs.init();
+
+  return indexjs;
 })();
